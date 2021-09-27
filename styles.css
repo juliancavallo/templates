@@ -1,0 +1,259 @@
+*{
+    box-sizing: border-box;   
+}
+
+:root{
+    --dark: #442928;
+    --light: rgb(230, 230, 230);
+}
+
+.light-mode{
+    --primary: var(--light);
+    --secondary: var(--dark);
+}
+
+
+.dark-mode{
+    --secondary: rgb(202, 202, 202);
+    --primary: var(--dark);
+}
+
+body{
+    background: var(--primary);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 5px;
+}
+
+input, textarea, button {
+    font-family: inherit;
+}
+
+
+/*Contenedores*/
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.align-start{
+    
+    align-items: flex-start;
+    text-align: start;
+}
+
+section{
+    padding: 5vh 5vw;
+    margin: 5vh 5vw;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: brightness(0.8) opacity(0.5);
+}
+
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/*Texto y links*/
+p, h1, h2, h3, h4, h5, a, li, button, input, span, select, label{
+    color: var(--secondary);
+    letter-spacing: 2px;
+}
+
+a:hover{
+    text-decoration: none;
+    color:var(--primary);
+    font-weight: 900;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color: var(--primary);
+   font-weight: normal;
+}
+
+
+/*Botones e inputs*/
+
+button, select, .select2{
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+select, .select2{
+    text-overflow: ellipsis;
+}
+
+input[type='text'], button, select, .select2 {
+    margin: 10px 0px;
+    outline: none;
+    padding: 8px;
+    height: 50px;
+    box-shadow: 0px 0px 2px var(--secondary);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    min-width: 250px;
+    max-width: 100%;
+    align-self: normal;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+
+
+/*select2*/
+
+.select2-selection{
+    border: none !important;
+    height: 100% !important;    
+    border-radius: 10px !important;
+    display: flex !important; 
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.select2-container{
+    padding: 0;
+    border: none;
+}
+
+.select2-container--open .select2-dropdown--below, .select2-search__field{
+    box-shadow: 0px 0px 2px var(--secondary);
+    border-radius: 10px !important;
+    background-color: var(--primary);
+    backdrop-filter: opacity(0.1);
+}
+
+.select2-selection__arrow{
+    top: auto !important;
+}
+
+.select2-container--default .select2-selection__rendered{
+    color: var(--primary) !important;
+    background-color: var(--secondary);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px var(--secondary);
+    display: flex !important; 
+    justify-content: center !important;
+    align-items: center !important;
+    transition: 0.5s;
+}
+
+.select2-container--default .select2-selection__rendered:hover{
+    color: var(--secondary) !important;
+    background-color: var(--primary);    
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+    background-color: var(--secondary) !important;
+    color: var(--primary) !important;
+}
+
+.select2-results__option--selectable {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.select2-container--default .select2-results__option--selected {
+    color: var(--primary) !important;
+    font-weight: bold;
+    background-color: var(--secondary) !important;
+    border: 1x var(--primary);
+}
+
+
+
+
+/*Mode selector*/
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 23px;
+    top:10px;
+    right: 30px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--dark);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    box-shadow: 0px 0px 2px var(--light);
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.fa-sun:before {
+    position: absolute;
+    right: 55px;
+    top: 3px  
+}
+
+.fa-moon:before {
+    position: absolute;
+    left: 55px;
+    top: 3px  
+}
