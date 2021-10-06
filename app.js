@@ -3,13 +3,10 @@
 
     loadColorMode();
 
-    document.querySelector("#colorModeSelector")
-        .addEventListener("click", (e) => {
-            
-            let newColorMode = e.target.checked ? 'dark-mode' : 'light-mode';
-
-            setColorMode(newColorMode);
-        });
+    document.querySelector("#colorModeSelector").addEventListener("click", (e) => {
+        let newColorMode = e.target.checked ? 'dark-mode' : 'light-mode';
+        setColorMode(newColorMode);
+    });
 
 })();
 
@@ -23,7 +20,8 @@ function loadColorMode() {
     
     if (localMode){
         setColorMode(localMode);
-        document.querySelector("#colorModeSelector")
+
+        document.querySelector("#colorModeSelector").checked = localMode == "dark-mode";
     }
     else
         setColorMode("light-mode");

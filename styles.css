@@ -3,19 +3,24 @@
 }
 
 :root{
-    --dark: #442928;
-    --light: rgb(230, 230, 230);
+    --dark: #2e5581;
+    --light: #fff;
+    --font-dark: rgb(31, 31, 31);
+    --font-light: #f5f5f5;
+    
 }
 
 .light-mode{
     --primary: var(--light);
     --secondary: var(--dark);
+    --font-primary: var(--font-dark);
 }
 
 
 .dark-mode{
-    --secondary: rgb(202, 202, 202);
+    --secondary: var(--light);
     --primary: var(--dark);
+    --font-primary: var(--font-light);
 }
 
 body{
@@ -67,7 +72,7 @@ section{
 
 /*Texto y links*/
 p, h1, h2, h3, h4, h5, a, li, button, input, span, select, label{
-    color: var(--secondary);
+    color: var(--font-primary);
     letter-spacing: 2px;
 }
 
@@ -94,6 +99,10 @@ button:hover{
     color: var(--secondary);
 }
 
+button:active{
+    transform: translateY(7px);
+}
+
 select, .select2{
     text-overflow: ellipsis;
 }
@@ -107,15 +116,14 @@ input[type='text'], button, select, .select2 {
     border: none;
     border-radius: 10px;
     font-weight: bold;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     min-width: 250px;
     max-width: 100%;
     align-self: normal;
     background-color: var(--secondary);
     color: var(--primary);
 }
-
 
 
 /*select2*/
